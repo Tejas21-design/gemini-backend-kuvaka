@@ -46,17 +46,16 @@ GEMINI_API_KEY=your_google_gemini_api_key
 
 📥 Install & Run
 bash
-Copy
-Edit
+
 npm install
 npx prisma generate
 npx prisma migrate dev --name init
 npm run dev
+
+
 In a second terminal:
 
 bash
-Copy
-Edit
 node queue/worker.js
 
 🧪 API Testing – Postman
@@ -66,15 +65,12 @@ gemini-kuvaka.postman_collection.json
 Includes:
 
 /auth/signup, /auth/send-otp, /auth/verify-otp
-
 /auth/me, /chatroom, /chatroom/:id
-
 /chatroom/:id/message
 
 📁 Folder Structure
 bash
-Copy
-Edit
+
 routes/           # Express route files
 prisma/           # Prisma client setup
 queue/            # BullMQ queue + Gemini worker
@@ -83,9 +79,6 @@ utils/            # JWT, Redis helpers
 
 📌 Notes
 OTP is mocked, returned directly in response (no SMS)
-
 Gemini responses are queued to avoid blocking user flow
-
 Redis is used for caching /chatroom and BullMQ queue
-
 Prisma handles all DB access and migrations
