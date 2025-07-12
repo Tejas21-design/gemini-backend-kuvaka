@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "32764c16-8c84-4d94-a898-8fd73f7f5c0d",
+		"name": "Gemini Backend - Kuvaka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11927131"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"9876543210\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"9876543210\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/send-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"9876543210\",\r\n  \"otp\": \"123456\"  // Use actual OTP shown in response\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/verify-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibW9iaWxlIjoiOTg3NjU0MzIxMCIsImlhdCI6MTc1MjMxNzA5MywiZXhwIjoxNzUyNDAzNDkzfQ.BkN_GJ3fWdiFm9TS1uYPU5Ip4C9SIIeDe6ZM7fbjLNk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibW9iaWxlIjoiOTg3NjU0MzIxMCIsImlhdCI6MTc1MjMxNzA5MywiZXhwIjoxNzUyNDAzNDkzfQ.BkN_GJ3fWdiFm9TS1uYPU5Ip4C9SIIeDe6ZM7fbjLNk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Gemini Test Room\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/chatroom?Auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chatroom"
+					],
+					"query": [
+						{
+							"key": "Auth",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibW9iaWxlIjoiOTg3NjU0MzIxMCIsImlhdCI6MTc1MjMxNzA5MywiZXhwIjoxNzUyNDAzNDkzfQ.BkN_GJ3fWdiFm9TS1uYPU5Ip4C9SIIeDe6ZM7fbjLNk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/chatroom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chatroom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibW9iaWxlIjoiOTg3NjU0MzIxMCIsImlhdCI6MTc1MjMxNzA5MywiZXhwIjoxNzUyNDAzNDkzfQ.BkN_GJ3fWdiFm9TS1uYPU5Ip4C9SIIeDe6ZM7fbjLNk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/chatroom/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chatroom",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibW9iaWxlIjoiOTg3NjU0MzIxMCIsImlhdCI6MTc1MjMxNzA5MywiZXhwIjoxNzUyNDAzNDkzfQ.BkN_GJ3fWdiFm9TS1uYPU5Ip4C9SIIeDe6ZM7fbjLNk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"Hi Gemini\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/chatroom/1/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chatroom",
+						"1",
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
