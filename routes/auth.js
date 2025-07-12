@@ -59,13 +59,14 @@ const authMiddleware = require('../middleware/auth');
 
 router.get('/me', authMiddleware, async (req, res) => {
   try {
+    console.log('🔐 Token user:', req.user); // log decoded token
     const user = await prisma.user.findUnique({
       where: { id: req.user.id },
-      select: {
-        id: true,
-        mobile: true,
-        createdAt: true
-      }
+    //   select: {
+    //     id: true,
+    //     mobile: true,
+    //     createdAt: true
+    //   }
     });
 
     res.json({ user });
