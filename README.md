@@ -43,3 +43,49 @@ DATABASE_URL=your_supabase_pg_url
 JWT_SECRET=your_jwt_secret
 REDIS_URL=your_upstash_redis_url
 GEMINI_API_KEY=your_google_gemini_api_key
+
+📥 Install & Run
+bash
+Copy
+Edit
+npm install
+npx prisma generate
+npx prisma migrate dev --name init
+npm run dev
+In a second terminal:
+
+bash
+Copy
+Edit
+node queue/worker.js
+
+🧪 API Testing – Postman
+Import the Postman collection:
+gemini-kuvaka.postman_collection.json
+
+Includes:
+
+/auth/signup, /auth/send-otp, /auth/verify-otp
+
+/auth/me, /chatroom, /chatroom/:id
+
+/chatroom/:id/message
+
+📁 Folder Structure
+bash
+Copy
+Edit
+routes/           # Express route files
+prisma/           # Prisma client setup
+queue/            # BullMQ queue + Gemini worker
+utils/            # JWT, Redis helpers
+.env              # Secrets (not committed)
+
+📌 Notes
+OTP is mocked, returned directly in response (no SMS)
+
+Gemini responses are queued to avoid blocking user flow
+
+Redis is used for caching /chatroom and BullMQ queue
+
+Prisma handles all DB access and migrations
