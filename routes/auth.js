@@ -68,9 +68,14 @@ router.get('/me', authMiddleware, async (req, res) => {
     //     createdAt: true
     //   }
     });
+    console.log('🧑 DB response:', user);
 
+    if (!user) {
+      return res.status(404).json({ error: 'User not found in DB' });
+    }
     res.json({ user });
   } catch (err) {
+    console.error('❌ Prisma error in /auth/me:', err);
     res.status(500).json({ error: 'Failed to fetch user details' });
   }
 });
