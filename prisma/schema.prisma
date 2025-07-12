@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+  // ✅ remove the `output` line
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  mobile    String   @unique
+  otp       String?
+  otpExpiry DateTime?
+  password  String?
+  createdAt DateTime @default(now())
+  chatrooms Chatroom[] 
+}
+
+model Chatroom {
+  id        Int       @id @default(autoincrement())
+  title     String
+  userId    Int
+  user      User      @relation(fields: [userId], references: [id])
+  messages  Message[]
+  createdAt DateTime  @default(now())
+}
+
+model Message {
+  id          Int       @id @default(autoincrement())
+  content     String
+  role        String     // 'user' or 'gemini'
+  chatroomId  Int
+  chatroom    Chatroom  @relation(fields: [chatroomId], references: [id])
+  createdAt   DateTime  @default(now())
+}
